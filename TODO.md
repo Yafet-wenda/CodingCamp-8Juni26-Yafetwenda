@@ -1,6 +1,8 @@
 # TODO
-- [ ] Perbaiki interaksi legend agar chart tidak “hilang” saat diklik (non-active segment jangan jadi fully transparent).
-- [ ] Pastikan update chart tetap konsisten dengan data kategori yang terfilter.
-- [x] Manual test: tambah transaksi, lalu klik legend berulang-ulang.
 
+- [x] Perbaiki `index.html` agar Chart.js dimuat (CDN) dan `js/script.js` hanya dipanggil sekali.
+
+- [x] Pastikan urutan script: Chart.js dulu, lalu `js/script.js`.
+
+- [ ] (Setelah edit) Jalankan buka `index.html` dan cek tidak ada error console + chart/legend tampil.
 
