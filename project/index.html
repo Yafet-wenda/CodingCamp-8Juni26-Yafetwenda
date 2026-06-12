@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+   <link rel="stylesheet" href="project/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <script src="project/js/script.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-chart-pie"></i> Expense Tracker by Yafet-Wenda</h1>
+            <button id="themeToggle" class="theme-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Summary -->
+        <div class="summary-card">
+            <div class="summary-header">
+                <i class="fas fa-wallet summary-icon"></i>
+                <h2>Total Spending</h2>
+            </div>
+            <p id="totalAmount" class="total-amount">Rp 0</p>
+            <p class="summary-subtitle">All transactions</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-grid">
+            <!-- Left: Form & Transactions -->
+            <div class="left-column">
+                <!-- Add Transaction -->
+                <section class="card form-section">
+                    <h2><i class="fas fa-plus"></i> Add Transaction</h2>
+                    <form id="transactionForm">
+                        <div class="form-group">
+                            <label for="itemName"><i class="fas fa-tag"></i> Item</label>
+                            <input type="text" id="itemName" placeholder="Item name" required>
+                            <div class="error-message" id="itemNameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount"><i class="fas fa-money-bill"></i> Amount</label>
+                            <input type="number" id="amount" min="1" placeholder="Rp" required>
+                            <div class="error-message" id="amountError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category"><i class="fas fa-folder"></i> Category</label>
+                            <select id="category" required>
+                                <option value="">Select</option>
+                                <option value="food">Food</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="fun">Fun</option>
+                            </select>
+                            <div class="error-message" id="categoryError"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-save"></i> Add
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Transaction History -->
+                <section class="card transactions-section">
+                    <div class="transactions-header">
+                        <h2><i class="fas fa-history"></i> History</h2>
+                        <div class="sort-controls">
+                            <label for="sortBy">Sort:</label>
+                            <select id="sortBy">
+                                <option value="newest">Newest</option>
+                                <option value="highest">Highest</option>
+                                <option value="lowest">Lowest</option>
+                                <option value="category">Category</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="highlight-control">
+                        <label>
+                            <input type="checkbox" id="highlightToggle" checked>
+                            Highlight > Rp 100k
+                        </label>
+                    </div>
+
+                    <div class="transactions-list" id="transactionsList">
+                        <div class="empty-state">
+                            <i class="fas fa-receipt"></i>
+                            <p>No transactions yet</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right: Chart -->
+            <div class="right-column">
+                <section class="card chart-section">
+                    <h2><i class="fas fa-chart-pie"></i> Spending Chart</h2>
+                    <div class="chart-container">
+                        <canvas id="spendingChart"></canvas>
+                    </div>
+                    <div class="chart-legend" id="chartLegend">
+                        <!-- Legend will be added here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Expense Tracker • Local Storage</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
